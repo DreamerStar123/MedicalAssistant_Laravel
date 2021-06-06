@@ -240,10 +240,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 @keyframes slideon {
 0% {
-  left: 400px; 
+  left: 400px;
 }
 100% {
-  left: 0; 
+  left: 0;
 }
 }
 #header .input-group{
@@ -294,7 +294,7 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -406,7 +406,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #2c4964;
@@ -1369,7 +1369,7 @@ inscription
 font-family: "Open Sans", sans-serif;
  display: flex;
  flex-direction: row;
- 
+
 }
 .pi_0{
   margin-right: 90px;
@@ -1446,7 +1446,7 @@ font-family: "Open Sans", sans-serif;
   margin-left: 70px;
   color: #1865a8;
   opacity: .5;
-  
+
 }
 .textarea{
   height: 60px !important;
@@ -1708,4 +1708,89 @@ height: 35px;
 border-radius: 10px;
 background-color: rgb(243, 243, 243);
 width: 300px;
+}
+
+/* Bookings page */
+
+.profile_bookings {
+  margin-top: 140px;
+  padding: 50px 0;
+}
+
+.profile_bookings h3 {
+}
+
+.profile_bookings .booking {
+  border: 1px solid #ececec;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.booking_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.booking_actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.booking_actions button {
+  margin-left: 15px;
+}
+
+.existing_bookings h3, .create_booking h3 {
+  margin-bottom: 40px;
+}
+
+.existing_bookings h3 i, .create_booking h3 i {
+  margin-right: 10px;
+}
+
+.booking_name {
+  font-weight: bold;
+  color: #1977cc;
+}
+
+.booking_time {
+  font-weight: bold;
+  color: #198754;
+}
+
+.bookings_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bookings_row .booking {
+  width: 48%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.booking_done {
+  color: #198754;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.bookings_section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.bookings_section h4 {
+  margin-bottom: 20px;
 }

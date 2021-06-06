@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookingController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +37,11 @@ Route::get('/contact', function () {
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile')->middleware('auth');
+
+Route::get('/bookings', [BookingController::class, 'showAll'])->name('bookings')->middleware('auth');
+
+Route::post('/bookings', [BookingController::class, 'create']);
+
+Route::post('/finish/{id}', [BookingController::class, 'finish']);
+
+Route::post('/delete/{id}', [BookingController::class, 'delete']);

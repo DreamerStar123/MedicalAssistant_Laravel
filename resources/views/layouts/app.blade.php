@@ -26,9 +26,11 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/datepicker.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -76,7 +78,7 @@
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
           @else
-            
+
             <li class="nav-link dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 {{ Auth::user()->name }}
@@ -93,12 +95,12 @@
                       @csrf
                   </form>
                 </li>
-                
+
               </ul>
             </li>
             </ul>
-          @endguest 
-        
+          @endguest
+
       </nav><!-- .navbar -->
 
 
@@ -113,14 +115,14 @@
         <div class="footer-top">
           <div class="container">
             <div class="row">
-    
+
               <div class="col-lg-3 col-md-6 footer-contact">
                 <h3>T-Care</h3>
                   <strong>Téléphone:</strong> +212 606 060606<br>
                   <strong>Email:</strong> takecare@gmail.com<br>
                 </p>
               </div>
-    
+
               <div class="col-lg-6 col-md-6 footer-links">
                 <h4>Liens Utiles</h4>
                 <div class="foot">
@@ -129,13 +131,13 @@
                   |<a href="{{ route('contact') }}">Contact</a>
                 </div>
               </div>
-    
+
             </div>
           </div>
         </div>
-    
+
         <div class="container d-md-flex py-4">
-    
+
           <div class="me-md-auto text-center text-md-start">
             <div class="copyright">
               &copy; Copyright <strong><span>T-Care</span></strong>. All Rights Reserved
@@ -150,20 +152,23 @@
           </div>
         </div>
       </footer><!-- End Footer -->
-    
+
       <div id="preloader"></div>
       <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    
+
       <!-- Vendor JS Files -->
       <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
       <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
       <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
       <script src="assets/vendor/purecounter/purecounter.js"></script>
       <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    
+
       <!-- Template Main JS File -->
+      <script src="assets/js/jquery.js"></script>
       <script src="assets/js/main.js"></script>
-    
+      <script src="assets/js/datepicker.js"></script>
+      <script src="assets/js/bookings.js"></script>
+
     </body>
-    
+
     </html>
