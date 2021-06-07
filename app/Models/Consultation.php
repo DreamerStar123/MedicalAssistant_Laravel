@@ -8,6 +8,7 @@ use App\Models\User;
 
 class Consultation extends Model
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
     protected $fillable = [

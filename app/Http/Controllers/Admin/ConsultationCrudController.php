@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\BookingRequest;
+use App\Http\Requests\ConsultationRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class BookingCrudController
+ * Class ConsultationCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class BookingCrudController extends CrudController
+class ConsultationCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class BookingCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Booking::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/booking');
-        CRUD::setEntityNameStrings('booking', 'bookings');
+        CRUD::setModel(\App\Models\Consultation::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/consultation');
+        CRUD::setEntityNameStrings('consultation', 'consultations');
     }
 
     /**
@@ -40,8 +40,10 @@ class BookingCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('name');
-        CRUD::column('date');
-        CRUD::column('finished');
+        CRUD::column('CIN');
+        CRUD::column('phone_client');
+        CRUD::column('medicament');
+        CRUD::column('posologie');
         CRUD::column('user_id');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -58,13 +60,14 @@ class BookingCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(BookingRequest::class);
+        CRUD::setValidation(ConsultationRequest::class);
 
         CRUD::field('name');
-        CRUD::field('date');
-        CRUD::field('finished');
+        CRUD::field('CIN');
+        CRUD::field('phone_client');
+        CRUD::field('medicament');
+        CRUD::field('posologie');
         CRUD::field('user_id');
-
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
