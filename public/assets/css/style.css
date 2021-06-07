@@ -1794,3 +1794,65 @@ width: 300px;
 .bookings_section h4 {
   margin-bottom: 20px;
 }
+
+.doctors_list {
+  margin-top: 140px;
+  padding: 50px 0;
+}
+
+.doctors_list .doctor {
+  border: 1px solid #ececec;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.doctors_list .doctor > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px
+}
+
+.doctors_list .doctor > div:last-child {
+  margin-bottom: 0;
+}
+
+.doctors_list .doctor > div i {
+  margin-right: 15px;
+  font-size: 15px;
+  width: 20px;
+  text-align: center;
+  color: #1977cc;
+}
+
+.doctors_list .doctor > div {
+  font-weight: 600;
+  color: #5f5f5f;
+}
+
+.search_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ececec;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+}
+
+.search_form form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.search_form form .btn {
+  margin-top: 0;
+}
+
+.search_form input[type=text] {
+  width: 100%;
+  margin-right: 20px;
+}

@@ -77,7 +77,7 @@
             <input type="text" class="form-control" id="patient_name" name="name" placeholder="Entrez le nom du patient">
           </div>
           <div class="mb-3">
-            <input id="datetimepicker" type="text">
+            <input id="datetimepicker" type="text" data-booked="{{ $booked_dates }}">
           </div>
           <input type="hidden" name="date" id="booking_date">
           <button type="submit" class="btn btn-primary save_booking">Enregistrer</button>

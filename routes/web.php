@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -45,3 +46,5 @@ Route::post('/bookings', [BookingController::class, 'create']);
 Route::post('/finish/{id}', [BookingController::class, 'finish']);
 
 Route::post('/delete/{id}', [BookingController::class, 'delete']);
+
+Route::get('/medecins', [UserController::class, 'search']);

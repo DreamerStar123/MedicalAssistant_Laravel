@@ -35,25 +35,42 @@ class BookingController extends Controller
 
   public function showAll() {
 
-    $today = Booking::whereDate('date', '<', date('Y-m-d', strtotime('tomorrow')))->get();
-    $other = Booking::whereDate('date', '>', date('Y-m-d'))->get();
+    $user = auth()->user();
+
+    $booked = $user->bookings()->get();
+    $today = $booked->where('date', '<', date('Y-m-d', strtotime('tomorrow')));
+    $other = $booked->where('date', '>', date('Y-m-d 23:59:59'));
+
+    $booked_dates = $booked->map(function($booking){
+      return $booking->date;
+    });
 
     return view('bookings', [
         'today' => $today,
-        'other' => $other
+        'other' => $other,
+        'booked_dates' => json_encode($booked_dates)
     ]);
   }
 
   public function create(Request $r) {
+
+    $user = auth()->user();
+
     $this->validate($r, [
         'name' => 'required',
         'date' => 'required'
     ]);
-    Booking::create(array(
-      'name' => $r->input('name'),
-      'date' => date('Y-m-d H:i:s', strtotime($r->input('date'))),
-      'finished' => false
-    ));
+
+    $booking = new Booking(
+      array(
+        'name' => $r->input('name'),
+        'date' => date('Y-m-d H:i:s', strtotime($r->input('date'))),
+        'finished' => false
+      )
+    );
+
+    $user->bookings()->save($booking);
+
     return redirect()->route('bookings');
   }
 }
