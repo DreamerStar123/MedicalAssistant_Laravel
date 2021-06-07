@@ -58,9 +58,9 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto {{ request()->is('accueil') ? 'active' : '' }}" href="#hero">Accueil</a></li>
-          <li><a class="nav-link scrollto {{ request()->is('services') ? 'active' : '' }}" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto {{ request()->is('conatct') ? 'active' : '' }}" href="#contact">Contact</a></li>
           @auth
+          <li><a class="nav-link scrollto {{ request()->is('bookings') ? 'active' : '' }}" href="{{ route('bookings') }}">Rendez-vous</a></li>
+          <li><a class="nav-link scrollto" href="#">Consultation</a></li>
           <li class="nav-link dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               {{ Auth::user()->name }}
@@ -81,6 +81,8 @@
             </ul>
           </li>
           @else
+              <li><a class="nav-link scrollto {{ request()->is('services') ? 'active' : '' }}" href="#services">Services</a></li>
+              <li><a class="nav-link scrollto {{ request()->is('conatct') ? 'active' : '' }}" href="#contact">Contact</a></li>
               <li><a class="nav-link scrollto {{ request()->is('login') ? 'active' : '' }}" href="{{ route('login') }}">Se connecter</a></li>
               <li><a class="nav-link scrollto {{ request()->is('register') ? 'active' : '' }}" href="{{ route('register') }}">S'inscrire</a></li>
           @endauth
