@@ -48,6 +48,8 @@ Route::get('/consultations', function () {
     return view('consultations');
 })->name('consultations')->middleware('auth');
 
+Route::get('/consultations', [ConsultationController::class, 'showAll'])->name('consultations')->middleware('auth');
+
 Route::post('/consultations', [ConsultationController::class, 'create']);
 
 Route::get('/bookings', [BookingController::class, 'showAll'])->name('bookings')->middleware('auth');

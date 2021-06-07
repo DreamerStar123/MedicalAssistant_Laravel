@@ -32,4 +32,20 @@ class ConsultationController extends Controller
 
         return redirect()->route('consultations');
     }
+
+    public function showAll() {
+        $user = auth()->user();
+
+        $consulted = $user->consultations()->get();
+        $today = $consulted->where('created_at', '<', date('Y-m-d', strtotime('tomorrow')));
+
+        $consulted_dates = $consulted->map(function($consultation) {
+            return $consultation->created_at;
+        });
+
+        return view('consultations', [
+            'today' => $today->reverse(),
+            'consulted_dates' => json_decode($consulted_dates)
+        ]);
+    }
 }

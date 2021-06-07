@@ -64,4 +64,62 @@
     </form>
 </section>
 
+<section>
+  <div class="consultation">
+    @foreach ($today as $patient)
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Nom : </h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{ $patient->name }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">CIN : </h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{ $patient->CIN }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">NUM téléphone : </h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{ $patient->phone_client }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Médicament : </h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{ $patient->medicament }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Posologie : </h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{ $patient->posologie }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Date : </h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{ date('d/m/Y H:i', strtotime($patient->created_at)) }}
+          </div>
+        </div>
+        <hr>
+      </div>
+    @endforeach
+  </div>
+</section>
+
 @endsection
