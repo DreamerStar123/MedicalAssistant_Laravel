@@ -11,6 +11,7 @@ use App\Models\Booking;
 
 class User extends Authenticatable
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory, Notifiable, Searchable;
 
     /**
