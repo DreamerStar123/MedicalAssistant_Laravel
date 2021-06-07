@@ -1,4 +1,4 @@
-<select class="form-control form-control-sm" name="ville" id="ville">
+<select class="form-control form-control-sm @error('ville') is-invalid @enderror" name="ville" id="ville" value="{{ old('ville') }}">
               <option value='Afourar'>Afourar</option>
               <option value='Agadir'>Agadir</option>
               <option value='Agdz'>Agdz</option>

@@ -15,8 +15,7 @@
         <div class="pi_0">
           <div class="title align">
             <label>Titre</label>
-            {{-- <input class="form-control form-control-sm" type="text" placeholder="Dr./Pr." name="title" aria-label=".form-control-sm example" value="{{ old('title') }}"> --}}
-            <select class="form-control form-control-sm" name="title" id="title">
+            <select class="form-control form-control-sm" name="title" id="title" value="{{ old('title') }}" autofocus>
               <option value="Dr.">Dr.</option>
               <option value="Pr.">Pr.</option>
             </select>
@@ -33,7 +32,11 @@
           <div class="lastname align">
             <label for="lastname">Nom</label>
             <input class="form-control form-control-sm @error('lastname') is-invalid @enderror" type="text" name="lastname" value="{{ old('lastname') }}" required autocomplete="name" autofocus>
-            <span class="text-danger">@error('lastname') {{ $message }} @enderror</span>
+            @error('lastname')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+            @enderror          
           </div>
           <div class="email align">
             <label for="email">Email</label>
@@ -67,20 +70,34 @@
         <div class="pi_1">
           <div class="specialite align">
             <label>Spécialité(s)</label>
-            <input class="form-control form-control-sm" type="text" name="specialite" aria-label=".form-control-sm example" value="{{ old('') }}">
+            <input class="form-control form-control-sm @error('specialite') is-invalid @enderror" type="text" name="specialite" value="{{ old('specialite') }}">
+            @error('specialite')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
           <div class="mb-3 align">
-            <label for="exampleFormControlTextarea1" class="form-label">Numéro et rue du cabinet</label>
-            <textarea class="form-control textarea " id="exampleFormControlTextarea1" placeholder="Exemple : 11, Avenue du 16
-            Novembre" rows="3" name="adresse"></textarea>
+            <label for="adresse" class="form-label">Numéro et rue du cabinet</label>
+            <textarea class="form-control textarea @error('adresse') is-invalid @enderror" placeholder="Exemple : 11, Avenue du 16 Novembre" rows="3" name="adresse" value="{{ old('adresse') }}"></textarea>
+            @error('adresse')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
           <div class="ville align">
             <label>Ville</label>
             @include('sets.cities')
+            @error('ville')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
           <div class="phone_0 align">
             <label>Numéro de Téléphone (cabinet)</label>
-            <input class="form-control form-control-sm" type="text" name="phone_ca" aria-label=".form-control-sm example" value="{{ old('phone_ca') }}">
+            <input class="form-control form-control-sm" type="text" name="phone_ca" value="{{ old('phone_ca') }}">
           </div>
           <div class="phone_1 align">
             <label>Numéro de portable</label>
