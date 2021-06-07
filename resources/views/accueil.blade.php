@@ -77,7 +77,7 @@
                     @csrf
                 </form>
               </li>
-              
+
             </ul>
           </li>
           @else
@@ -149,7 +149,13 @@
 
       </div>
     </section><!-- End Why Us Section -->
-
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          @include('shared.search_form')
+        </div>
+      </div>
+    </div>
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
       <div class="container">
@@ -337,7 +343,7 @@
                   <h4>CTO &amp; Co-Founder</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Notre portail Web dédié à la participation des patients vous permet d'accéder immédiatement aux informations (pas besoin de formulaires encombrants, d'appels longs, Ou problème administratif) et en toute sécurité                 
+                    Notre portail Web dédié à la participation des patients vous permet d'accéder immédiatement aux informations (pas besoin de formulaires encombrants, d'appels longs, Ou problème administratif) et en toute sécurité
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
                 </div>
@@ -352,7 +358,7 @@
                   <h4>Freelancer</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                    Je suis fier de participer à ce travail car c'est le futur de la santé 
+                    Je suis fier de participer à ce travail car c'est le futur de la santé
                     <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                   </p>
                 </div>
