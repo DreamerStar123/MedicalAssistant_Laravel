@@ -52,7 +52,7 @@
           </div>
           <div class="password align">
             <label for="password">Password</label>
-            <input class="form-control form-control-sm @error('email') is-invalid @enderror" type="password" name="password" required autocomplete="new-password">
+            <input class="form-control form-control-sm @error('password') is-invalid @enderror" type="password" name="password" required autocomplete="new-password">
             <p>Choisissez un mot de passe pour votre compte T-Care.<br>
               Le mot de passe doit comporter au moins 8 caractères.
             </p>
@@ -64,7 +64,7 @@
           </div>
           <div class="pc_0 align">
             <label for="password">Confirmation du mot de passe</label>
-            <input class="form-control form-control-sm" type="password" name="password_confirmation" required autocomplete="new-password">
+            <input class="form-control form-control-sm @error('password_confirmation') is-invalid @enderror" type="password" name="password_confirmation" required autocomplete="new-password">
           </div>
         </div>
         <div class="pi_1">
@@ -98,13 +98,23 @@
           <div class="phone_0 align">
             <label>Numéro de Téléphone (cabinet)</label>
             <input class="form-control form-control-sm" type="text" name="phone_ca" value="{{ old('phone_ca') }}">
+            @error('phone_ca')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
           <div class="phone_1 align">
             <label>Numéro de portable</label>
-            <input class="form-control form-control-sm" type="text" name="phone_per" aria-label=".form-control-sm example" value="{{ old('phone_per') }}">
+            <input class="form-control form-control-sm" type="text" name="phone_per" value="{{ old('phone_per') }}">
             <p>Ne sera utilisé que par l'équipe T-Care.<br>
               Ne sera pas communiqué aux patients.
             </p>
+            @error('phone_per')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+            @enderror
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
@@ -113,7 +123,7 @@
               être un professionnel de santé
             </label>
             </div>
-          <input class="btn btn-primary mb-3" type="submit" value="inscrire" required><br>
+          <input class="btn btn-primary mb-3" type="submit" value="Inscrire" required><br>
           <a href="/login">J’ai déjà un compte T-Care</a>
         </div>
       </form>

@@ -80,7 +80,7 @@
           @else
             <li><a class="nav-link scrollto {{ request()->is('accueil') ? 'active' : '' }}" href="{{ route('accueil') }}">Accueil</a></li>
             <li><a class="nav-link scrollto {{ request()->is('bookings') ? 'active' : '' }}" href="{{ route('bookings') }}">Rendez-vous</a></li>
-            <li><a class="nav-link scrollto" href="#">Consultation</a></li>
+            <li><a class="nav-link scrollto {{ request()->is('consultations') ? 'active' : '' }}" href="{{ route('consultations') }}">Consultation</a></li>
             <li class="nav-link dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 {{ Auth::user()->name }}

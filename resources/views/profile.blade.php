@@ -60,7 +60,7 @@
             <hr>
             <div class="row">
             <div class="col-sm-12">
-                <a class="btn edit " target="" href="">Edit</a>
+                <a class="btn edit " target="" href="/profile-edit">Modifier</a>
             </div>
             </div>
         </div>

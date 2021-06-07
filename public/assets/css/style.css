@@ -1717,9 +1717,6 @@ width: 300px;
   padding: 50px 0;
 }
 
-.profile_bookings h3 {
-}
-
 .profile_bookings .booking {
   border: 1px solid #ececec;
   padding: 20px;
@@ -1855,4 +1852,85 @@ width: 300px;
 .search_form input[type=text] {
   width: 100%;
   margin-right: 20px;
+}
+
+/*--------------------------------------------------------------
+consultation page
+--------------------------------------------------------------*/
+.consultation{
+  width: 800px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 15px rgba(25, 119, 204, .15);
+  margin-top: 80px;
+  margin-left: 25%;
+
+}
+.consult-lign{
+  height: 4px;
+  width: 200px;
+  background-color: #1977cc;
+  opacity: .5;
+  border-radius: 10px;
+  margin-top: -10px;
+}
+.consult-title{
+  margin: 20px 0 20px 35%;
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+}
+.consultation input{
+  border: 0;
+border-radius: 10px;
+background-color: rgb(243, 243, 243);
+width: 300px;
+height: 35px;
+
+}
+.consultation textarea{
+  border: 0;
+border-radius: 10px;
+background-color: rgb(243, 243, 243);
+width: 300px;
+}
+.first-row, .second-row, .third-row{
+  padding-left: 50px;
+}
+.first-row label:last-of-type{
+  padding-left: 50px;
+}
+.second-row label:last-of-type{
+margin-top: 50px;
+}
+.first-row, .second-row{
+  margin: 10px;
+}
+.third-row{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.btn-consultation{
+  background-color: #1c84e3;
+  width: 120px;
+  height: 30px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+}
+.second-row label:nth-child(2){
+  padding-left: 50px;
+}
+.second-row .btn-consultation{
+  margin-left: 50px;
+  width:100px ;
+}
+.third-row textarea{
+  width: 650px;
+  height: 100px;
+}
+.third-row button{
+  margin-top: 25px;
 }

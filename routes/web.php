@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\UserController;
-
+use App\Models\Consultation;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,16 @@ Route::get('/contact', function () {
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile')->middleware('auth');
+
+Route::get('/profile-edit', function () {
+    return view('edit-profile');
+})->name('edit')->middleware('auth');
+
+Route::get('/consultations', function () {
+    return view('consultations');
+})->name('consultations')->middleware('auth');
+
+Route::post('/consultations', [ConsultationController::class, 'create']);
 
 Route::get('/bookings', [BookingController::class, 'showAll'])->name('bookings')->middleware('auth');
 

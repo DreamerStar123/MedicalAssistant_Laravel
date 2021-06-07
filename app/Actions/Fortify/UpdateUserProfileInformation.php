@@ -20,7 +20,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
-
+            'lastname' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
                 'string',
@@ -28,6 +28,11 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'max:255',
                 Rule::unique('users')->ignore($user->id),
             ],
+            'specialite' => ['required', 'string', 'max:255'],
+            'adresse' => ['required', 'string', 'max:255'],
+            'ville' => ['required', 'string', 'max:20'],
+            'phone_ca' => ['required', 'string', 'max:10'],
+            'phone_per' => ['required', 'string', 'max:10'],
         ])->validateWithBag('updateProfileInformation');
 
         if ($input['email'] !== $user->email &&
@@ -35,8 +40,15 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $this->updateVerifiedUser($user, $input);
         } else {
             $user->forceFill([
+                'title' => $input['title'],
                 'name' => $input['name'],
+                'lastname' => $input['lastname'],
                 'email' => $input['email'],
+                'specialite' => $input['specialite'],
+                'adresse' => $input['adresse'],
+                'ville' => $input['ville'],
+                'phone_ca' => $input['phone_ca'],
+                'phone_per' => $input['phone_per'],
             ])->save();
         }
     }

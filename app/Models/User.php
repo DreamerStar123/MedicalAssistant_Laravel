@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Scout\Searchable;
 use App\Models\Booking;
+use App\Models\Consultation;
 
 class User extends Authenticatable
 {
@@ -60,6 +61,10 @@ class User extends Authenticatable
 
     public function bookings() {
         return $this->hasMany(Booking::class);
+    }
+
+    public function consultations() {
+        return $this->hasMany(Consultation::class);
     }
 
 }
