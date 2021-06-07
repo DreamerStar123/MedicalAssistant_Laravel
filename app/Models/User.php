@@ -12,6 +12,7 @@ use App\Models\Consultation;
 
 class User extends Authenticatable
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory, Notifiable, Searchable;
 
     /**
