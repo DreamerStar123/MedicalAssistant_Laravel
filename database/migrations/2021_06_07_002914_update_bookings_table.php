@@ -14,8 +14,8 @@ class UpdateBookingsTable extends Migration
     public function up()
     {
       Schema::table('bookings', function (Blueprint $table) {
-          $table->unsignedBigInteger('user_id');
-          $table->foreign('user_id')->references('id')->on('users');
+          //$table->unsignedBigInteger('user_id');
+          //$table->foreign('user_id')->references('id')->on('users');
       });
     }
 
