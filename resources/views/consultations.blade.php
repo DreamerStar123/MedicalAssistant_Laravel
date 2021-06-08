@@ -10,7 +10,7 @@
             <div class="consult-lign"></div>
         </div>
         <label class="first-row" for="name">
-            <p>Nom du patien</p>
+            <p>Nom du patient</p>
             <input type="text" class="@error('name') is-invalid @enderror" name="name" placeholder="Entrez le nom du patient">
             @error('name')
               <span class="invalid-feedback" role="alert">
@@ -39,7 +39,8 @@
         </label>
         <label>
           <p>Médicament</p>
-          <input type="text" class="@error('medicament') is-invalid @enderror" name="medicament" placeholder="Entrer le nom du medicament">
+          <textarea name="medicament" class="@error('medicament') is-invalid @enderror" placeholder="Entrer le nom du medicament"></textarea>
+          {{-- <input type="text" class="@error('medicament') is-invalid @enderror" name="medicament" placeholder="Entrer le nom du medicament"> --}}
           @error('medicament')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
