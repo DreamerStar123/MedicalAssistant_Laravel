@@ -15,7 +15,6 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -51,8 +50,6 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <!-- <h1 class="logo me-auto"><a href="index.html">T-Care</a></h1> -->
-      <!-- Uncomment below if you prefer to use an image logo -->
       <a href="{{ route('accueil') }}" class="logo me-auto"><img src="assets/img/T-Care.png" alt="logo" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
@@ -67,6 +64,9 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li> <a class="dropdown-item" href="{{ route('profile') }}">{{ __('Profile') }}</a></li>
+              @if (auth()->user()->is_admin)
+                <li><a class="dropdown-item" href="admin">{{ __('Admin') }}</a></li>
+              @endif
               <li> <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
@@ -99,7 +99,6 @@
     <div class="container">
       <h1>Bienvenue sur platefomre T-Care</h1>
       <h2>Nous vous aiderons à trouver un médecin proche de vous</h2>
-      <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
     </div>
   </section><!-- End Hero -->
 
@@ -149,13 +148,16 @@
 
       </div>
     </section><!-- End Why Us Section -->
-    <div class="container">
+
+    <!-- ======= Search bar ======= -->
+    <div class="container" id="search"> 
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           @include('shared.search_form')
         </div>
       </div>
     </div>
+
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
       <div class="container">
@@ -204,7 +206,7 @@
           <div class="col-lg-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="fas fa-heartbeat"></i></div>
-              <h4><a href="">Chercher un médecin</a></h4>
+              <h4><a href="#search">Chercher un médecin</a></h4>
               <p>Notre application vous donne le choix de sélectionner le médecin le plus convenable pour vous.</p>
             </div>
           </div>
@@ -212,19 +214,10 @@
           <div class="col-lg-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="fas fa-hospital-user"></i></div>
-              <h4><a href="">Réservation</a></h4>
+              <h4><a href="#search">Réservation</a></h4>
               <p>Vous êtes capable maintenant de choisir le rendez-vous le plus adéquat à vos besoins.</p>
             </div>
           </div>
-
-          {{-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="fas fa-notes-medical"></i></div>
-              <h4>Consultation dossier</h4>
-              <p>Via notre application , vous pouvez consulter votre dossier médical à tout temps.</p>
-            </div>
-          </div> --}}
-
         </div>
 
       </div>
@@ -407,6 +400,7 @@
           <div class="col-lg-8 mt-5 mt-lg-0">
 
             <form action="" method="post" role="form" class="php-email-form">
+              @csrf
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" required>
@@ -488,7 +482,6 @@
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 

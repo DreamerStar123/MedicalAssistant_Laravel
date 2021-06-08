@@ -15,7 +15,7 @@
         <div class="col-lg-6 d-flex align-items-stretch mt-4 mt-lg-0">
           <div class="icon-box">
             <div class="icon"><i class="fas fa-heartbeat"></i></div>
-            <h4><a href="">Chercher un médecin</a></h4>
+            <h4><a href="/medecins">Chercher un médecin</a></h4>
             <p>Notre application vous donne le choix de sélectionner le médecin le plus convenable pour vous.</p>
           </div>
         </div>
@@ -23,18 +23,10 @@
         <div class="col-lg-6 d-flex align-items-stretch mt-4 mt-lg-0">
           <div class="icon-box">
             <div class="icon"><i class="fas fa-hospital-user"></i></div>
-            <h4><a href="">Réservation</a></h4>
+            <h4><a href="/medecins">Réservation</a></h4>
             <p>Vous êtes capable maintenant de choisir le rendez-vous le plus adéquat à vos besoins.</p>
           </div>
         </div>
-
-        {{-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-          <div class="icon-box">
-            <div class="icon"><i class="fas fa-notes-medical"></i></div>
-            <h4>Consultation dossier</h4>
-            <p>Via notre application , vous pouvez consulter votre dossier médical à tout temps.</p>
-          </div>
-        </div> --}}
 
       </div>
 

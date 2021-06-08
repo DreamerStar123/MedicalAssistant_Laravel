@@ -16,7 +16,8 @@ class Consultation extends Model
         'CIN',
         'phone_client',
         'medicament',
-        'posologie'
+        'posologie',
+        'diagnostic'
     ];
     
     public function user() {

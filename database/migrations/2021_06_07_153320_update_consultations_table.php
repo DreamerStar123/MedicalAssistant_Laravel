@@ -14,6 +14,7 @@ class UpdateConsultationsTable extends Migration
     public function up()
     {
         Schema::table('consultations', function(Blueprint $table) {
+            $table->string('diagnostic');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
         });

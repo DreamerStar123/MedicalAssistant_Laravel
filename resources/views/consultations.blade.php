@@ -40,7 +40,6 @@
         <label>
           <p>Médicament</p>
           <textarea name="medicament" class="@error('medicament') is-invalid @enderror" placeholder="Entrer le nom du medicament"></textarea>
-          {{-- <input type="text" class="@error('medicament') is-invalid @enderror" name="medicament" placeholder="Entrer le nom du medicament"> --}}
           @error('medicament')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
@@ -51,12 +50,21 @@
       <div class="third-row">
         <label for="posologie">
             <p>Posologie</p>
-            <textarea name="posologie" class="@error('posologie') is-invalid @enderror"></textarea>
+            <textarea name="posologie" class="@error('posologie') is-invalid @enderror mb-3"></textarea>
             @error('posologie')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
               </span>
             @enderror
+        </label>
+        <label for="diagnostic">
+          <p>Diagnostic Et Examens Complémentaires</p>
+          <textarea name="diagnostic" class="@error('diagnostic') is-invalid @enderror"></textarea>
+          @error('diagnostic')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+          @enderror
         </label>
         <button type="submit" class="btn-consultation">Enregistrer</button>
       </div>
@@ -107,6 +115,14 @@
           </div>
           <div class="col-sm-9 text-secondary">
             {{ $patient->posologie }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Diagnostic : </h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+            {{ $patient->diagnostic }}
           </div>
         </div>
         <div class="row">

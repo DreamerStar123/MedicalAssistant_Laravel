@@ -56,8 +56,6 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <!-- <h1 class="logo me-auto"><a href="index.html">T-Care</a></h1> -->
-      <!-- Uncomment below if you prefer to use an image logo -->
       @auth
 
         <a href="{{ route('home') }}" class="logo me-auto"><img src="assets/img/T-Care.png" alt="logo" class="img-fluid"></a>
@@ -87,6 +85,9 @@
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="{{ route('profile') }}">{{ __('Profile') }}</a></li>
+                @if (auth()->user()->is_admin)
+                  <li><a class="dropdown-item" href="admin">{{ __('Admin') }}</a></li>
+                @endif
                 <li> <a class="dropdown-item" href="{{ route('logout') }}"
                   onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">

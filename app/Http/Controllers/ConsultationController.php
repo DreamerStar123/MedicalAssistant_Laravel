@@ -14,8 +14,9 @@ class ConsultationController extends Controller
             'name' => 'required|min:2|max:255',
             'CIN' => 'required|min:5|max:10',
             'phone_client' => 'required|max:10',
-            'medicament' => 'required',
-            'posologie' => 'required'
+            'medicament' => '',
+            'posologie' => '',
+            'diagnostic' => 'required'
         ]);
 
         $consultation = new Consultation(
@@ -25,6 +26,7 @@ class ConsultationController extends Controller
                 'phone_client' => $request->input('phone_client'),
                 'medicament' => $request->input('medicament'),
                 'posologie' => $request->input('posologie'),
+                'diagnostic' => $request->input('diagnostic'),
             )
         );
 
