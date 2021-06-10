@@ -228,7 +228,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Notre Docteurs</h2>
+          <h2>Nos Docteurs</h2>
         </div>
 
         <div class="row">
